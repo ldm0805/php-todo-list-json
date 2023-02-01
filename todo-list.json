@@ -1,0 +1,26 @@
+[
+    {
+        "language": "HTML",
+        "done": false
+    },
+    {
+        "language": "CSS",
+        "done": false
+    },
+    {
+        "language": "Responsive Design",
+        "done": false
+    },
+    {
+        "language": "Javascript",
+        "done": false
+    },
+    {
+        "language": "PHP",
+        "done": false
+    },
+    {
+        "language": "Lavarel",
+        "done": false
+    }
+]

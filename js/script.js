@@ -8,6 +8,7 @@ createApp({
             language: ''
         }
     },
+    //Funzione per aggiungere elementi nella lista
     methods: {
         addToDoItem() {
             const data = {

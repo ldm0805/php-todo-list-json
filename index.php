@@ -25,7 +25,7 @@
                         </li>
                     </ul>
                     <div class="col-12 mt-5 d-flex">
-                        <input type="text" v-model="language" placeholder="Elemento Lista" class="form-control">
+                        <input type="text" v-model="language" placeholder="Elemento Lista" class="form-control" @keyup.enter="addToDoItem">
                         <button class="btn btn-light col-2" @click="addToDoItem">Inserisci elemento</button>
                     </div>
                 </div>

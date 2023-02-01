@@ -8,6 +8,12 @@ createApp({
             language: ''
         }
     },
+    mounted() {
+        axios.get(this.apiUrl).then((response) => {
+            this.todoList = response.data;
+
+        });
+    },
     //Funzione per aggiungere elementi nella lista
     methods: {
         addToDoItem() {
@@ -22,10 +28,4 @@ createApp({
             })
         }
     },
-    mounted() {
-        axios.get(this.apiUrl).then((response) => {
-            this.todoList = response.data;
-
-        });
-    }
 }).mount('#app');

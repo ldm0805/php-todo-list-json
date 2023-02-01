@@ -14,7 +14,12 @@
     <div id="app">
         <div class="container">
             <div class="row">
-                <div class="col-12">    
+                <div class="col-12">
+                    <ul class="list-unstyled">
+                        <li class="p-2 border-solid-grey" v-for="todo in todoList">
+                            {{todo.language}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

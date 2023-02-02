@@ -18,14 +18,25 @@
     <div id="app">
         <div class="container">
             <div class="row d-flex justify-content-center mt-4">
-                <div class="col-6">
+                <div class="col-9">
                     <h2 class="text-center my-5">To-Do-List</h2>
                     <ul class="list-unstyled list-group text-center">
                         <li class="p-2 list-group-item animate__animated animate__bounceIn animate__delay-0.5s" v-for="(todo, index) in todoList">
                             <div class="d-flex justify-content-between align-items-center">
-                                {{todo.language}}
+                                <div v-if="clicked != index">
+                                    {{todo.language}}
+                                </div>
+                                <div v-else>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <input type="text" v-model="todo.language" placeholder="Modifica Lista" class="form-control">
+                                            <button class="btn btn-primary" @click="confirmUpdate(todo.language, index)">xx</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div>
-                                    <button class="btn btn-light col-2" @click="deleteTodo(index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="btn btn-square btn-warning m-1" @click="editTodo(index)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                    <button class="btn btn-danger m-1" @click="deleteTodo(index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </li>

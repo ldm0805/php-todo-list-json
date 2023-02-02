@@ -5,7 +5,8 @@ createApp({
         return {
             apiUrl: 'server.php',
             todoList: [],
-            language: ''
+            language: '',
+            clicked: ''
         }
     },
     mounted() {
@@ -29,13 +30,29 @@ createApp({
         },
         deleteTodo(index) {
             const data = {
-                element: index
+                delete: index
             }
             axios.post(this.apiUrl, data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then((response) => {
                 this.todoList = response.data;
             })
+        },
+        //Modifica elementi nell'array
+        editTodo(index) {
+            this.clicked = index
+        },
+        confirmUpdate(string, index) {
+            const data = {
+                edit: index,
+                language_edit: string
+            }
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                this.todoList = response.data;
+                this.clicked = '';
+            });
 
         }
     },

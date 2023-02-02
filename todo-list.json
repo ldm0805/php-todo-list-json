@@ -1,18 +1,1 @@
-[
-    {
-        "language": "HTML",
-        "done": false
-    },
-    {
-        "language": "CSS",
-        "done": true
-    },
-    {
-        "language": "Responsive Design",
-        "done": false
-    },
-    {
-        "language": "Javascript",
-        "done": false
-    }
-]
+[]

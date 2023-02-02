@@ -26,6 +26,6 @@ createApp({
                 this.language = '';
                 this.todoList = response.data;
             })
-        }
+        },
     },
 }).mount('#app');

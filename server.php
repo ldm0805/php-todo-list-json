@@ -5,7 +5,7 @@ $string = file_get_contents('todo-list.json');
 $todo_list = json_decode($string, true);
 
 //Aggiungo elementi all'array
-if (isset($_POST['todoItem'])) {
+if (isset($_POST['todoItem']) && trim($_POST['todoItem']) != '') {
     $todo_item = $_POST['todoItem'];
 
     $todo_array = [
@@ -17,6 +17,9 @@ if (isset($_POST['todoItem'])) {
     // Scrivo i dati nel file
     file_put_contents('todo-list.json', json_encode($todo_list, JSON_PRETTY_PRINT));
 }
+if (isset($_POST['deleteTask']))
+    unset($todo_list[$_POST['deleteTask']]);
+
 
 header('Content-Type: application/json');
 echo json_encode($todo_list);
